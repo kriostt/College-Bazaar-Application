@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "Samsung Frontal Washer and Dryer",
+    "description": "With laundry pedestal. Dryer works well. Washer works but I have to change the cycle to finish the wash. I cannot help with moving it.",
+    "category": "Appliances",
+    "price": 400
+  },
+  {
+    "id": 2,
+    "name": "North Face Windbreaker",
+    "description": "Used good. Meet up at the college.",
+    "category": "Clothing",
+    "price": 20
+  },
+  {
+    "id": 3,
+    "name": "iPad 9th Gen",
+    "description": "64 GB Brand New And Still Sealed. Meet up at RDP.",
+    "category": "Electronics",
+    "price": 410
+  },
+  {
+    "id": 4,
+    "name": "Ikea Pax Wardrobe System",
+    "description": "Comes with two extra small shelves, two extra large shelves, and shoe organizer. 98 1/2 inches wide. All drawers work well and slide easily.",
+    "category": "Furniture",
+    "price": 700
+  },
+  {
+    "id": 5,
+    "name": "Fjallraven Kanken Art Sling Bag",
+    "description": "New but took out the tags and was just on display.",
+    "category": "Miscellaneous",
+    "price": 55
+  },
+  {
+    "id": 6,
+    "name": "New Developing Clinical Judgement Textbook",
+    "description": "New still sealed in wrap. BScN nursing textbook. Can deliver in Red Deer.",
+    "category": "Textbook",
+    "price": 50
+  },
+  {
+    "id": 7,
+    "name": "2017 Mitsubishi Lancer",
+    "description": "Needs a front bumper repair. Summer tires on alloy wheels. New Snow tires. New windshield. Everything is working.",
+    "category": "Vehicles",
+    "price": 8500
+  }
+]
