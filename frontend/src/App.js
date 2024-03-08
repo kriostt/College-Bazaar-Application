@@ -1,5 +1,5 @@
 import './App.css';
-import ProfileManagement from './components/ProfileManagement';
+import ProfileManagement from './components/ProfileManagement/ProfileManagement';
 
 function App() {
   return (

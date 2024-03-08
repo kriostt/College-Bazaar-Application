@@ -3,7 +3,7 @@ import Avatar from "react-avatar-edit";
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
 import { InputText } from "primereact/inputtext";
-import img from "../minsi.png";
+import img from "../../minsi.png";
 import "./ProfileManagement.css";
 
 const ProfileManagement = () => {
