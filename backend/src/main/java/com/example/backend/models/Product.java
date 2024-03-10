@@ -28,4 +28,8 @@ public class Product {
 
     private String sellerUsername;
     private Date datePosted;
+
+    // Added Fields for the Product Details feature
+    private String specifications;
+    private String additionalImages;
 }
