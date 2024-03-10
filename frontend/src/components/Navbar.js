@@ -30,10 +30,12 @@ const Navbar = () => {
             {/* unordered list for navigation items */}
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link to="/" className="nav-link" aria-current="page">
+                <Link to="/" className="nav-link" aria-current="page" exact>
                   Home
                 </Link>
               </li>
+
+              {/* product category dropdown */}
               <li className="nav-item dropdown">
                 <Link
                   to="/shop"
