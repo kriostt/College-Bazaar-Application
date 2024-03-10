@@ -1,45 +1,8 @@
-.navbar {
-  height: 10vh;
-  background: #1b1919;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+  display: block;
 }
 
-.navbar-logo {
-  color: white;
-  text-decoration: none;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 15rem;
-  padding-left: 2rem;
-}
-
-.nav-items {
-  display: flex;
-  list-style: none;
-  text-align: center;
-  width: 70vw;
-  margin-right: 2rem;
-}
-
-.nav-item {
-  display: flex;
-  align-items: center;
-  height: 10vh;
-}
-
-.nav-item a {
-  text-decoration: none;
-  color: white;
-  font-size: 1.1rem;
-  margin-right: 0.5rem;
-  padding: 6px 16px;
-  border-radius: 5px;
-}
-
-.nav-item a:hover {
-  background: lightgreen;
+.dropdown-menu {
+  display: none;
+  transition: display 0.3s ease;
 }
