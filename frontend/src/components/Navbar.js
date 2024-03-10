@@ -1,5 +1,4 @@
 // import necessary modules and external files
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
