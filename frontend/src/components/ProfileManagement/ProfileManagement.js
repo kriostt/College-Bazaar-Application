@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Avatar from "react-avatar-edit";
+import { Link } from "react-router-dom";
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
 import { InputText } from "primereact/inputtext";
+import { FaKey } from "react-icons/fa";
 import img from "../../minsi.png";
 import "./ProfileManagement.css";
 
@@ -17,7 +19,8 @@ const ProfileManagement = () => {
   const [profileData, setProfileData] = useState({
     // State for profile data
     username: "alesandrahenriz",
-    name: "Alessandra Henriz Vendicacion",
+    firstName: "Alessandra Henriz",
+    lastName: "Vendicacion",
     phoneNumber: "5878776955",
     emailAddress: "ahavendicacion@gmail.com",
   });
@@ -25,6 +28,7 @@ const ProfileManagement = () => {
   // Function to handle input changes in the form fields
   const handleInput = (e) => {
     const { name, value } = e.target;
+    setErrors("");
     setProfileData({ ...profileData, [name]: value });
   };
 
@@ -35,9 +39,14 @@ const ProfileManagement = () => {
     const errors = {};
     const nameRegex = /\d/; // Regular expression to check for presence of digits
 
-    if (nameRegex.test(profileData.name.trim())) {
+    if (nameRegex.test(profileData.firstName.trim())) {
       // Checking if name contains digits
-      errors.name = "This field cannot contain numbers";
+      errors.firstName = "This field cannot contain numbers";
+    }
+
+    if (nameRegex.test(profileData.lastName.trim())) {
+      // Checking if name contains digits
+      errors.lastName = "This field cannot contain numbers";
     }
 
     // Setting errors if any validation fails
@@ -74,8 +83,8 @@ const ProfileManagement = () => {
         <div className="flex flex-column justify-content-center align-items-center">
           <img
             style={{
-              width: "200px",
-              height: "200px",
+              width: "160px",
+              height: "160px",
               borderRadius: "50%",
               objectFit: "cover",
               marginBottom: "20px",
@@ -151,28 +160,31 @@ const ProfileManagement = () => {
           </div>
         </div>
 
-        {/* Name */}
+        {/* FirstName */}
         <div className="row mb-4">
           <div className="col-sm-3">
-            {/* Label for name */}
-            <label className="col-form-label col-form-label-sm me-5">
-              Name:
+            {/* Label for firstname */}
+            <label
+              className="col-form-label col-form-label-sm me-5"
+              style={{ whiteSpace: "nowrap" }}
+            >
+              First Name:
             </label>
           </div>
           <div className="col-sm-9">
             {/* Container for input field and error message */}
             <div style={{ position: "relative" }}>
-              {/* Input for name */}
+              {/* Input for firstname */}
               <input
                 className="form-control form-control-sm"
                 type="text"
-                id="name"
-                name="name"
-                value={profileData.name}
+                id="firstName"
+                name="firstName"
+                value={profileData.firstName}
                 onChange={handleInput}
               />
               {/* Error message */}
-              {errors.name && (
+              {errors.firstName && (
                 <span
                   className="text-danger small"
                   style={{
@@ -182,7 +194,48 @@ const ProfileManagement = () => {
                     fontSize: "11px",
                   }}
                 >
-                  {errors.name}
+                  {errors.firstName}
+                </span>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Last Name */}
+        <div className="row mb-4">
+          <div className="col-sm-3">
+            {/* Label for lastname */}
+            <label
+              className="col-form-label col-form-label-sm me-5"
+              style={{ whiteSpace: "nowrap" }}
+            >
+              Last Name:
+            </label>
+          </div>
+          <div className="col-sm-9">
+            {/* Container for input field and error message */}
+            <div style={{ position: "relative" }}>
+              {/* Input for lastname */}
+              <input
+                className="form-control form-control-sm"
+                type="text"
+                id="lastName"
+                name="lastName"
+                value={profileData.lastName}
+                onChange={handleInput}
+              />
+              {/* Error message */}
+              {errors.lastName && (
+                <span
+                  className="text-danger small"
+                  style={{
+                    position: "absolute",
+                    top: "-1.3rem",
+                    left: "0.2rem",
+                    fontSize: "11px",
+                  }}
+                >
+                  {errors.lastName}
                 </span>
               )}
             </div>
@@ -232,15 +285,28 @@ const ProfileManagement = () => {
         </div>
 
         {/* Buttons */}
-        <div className="row d-flex justify-content-end">
-          <div className="col-sm-3">
-            <button type="submit" className="btn btn-outline-secondary btn-md">
-              Save
-            </button>
+        <div className="row" style={{ marginTop: "30px" }}>
+          <div className="col-sm-6">
+            <Link
+              to="/change-password"
+              className="btn btn-outline-secondary btn-sm w-120"
+              style={{
+                whiteSpace: "nowrap",
+                fontSize: "15px",
+              }}
+            >
+              <span className="icon">
+                <FaKey />
+              </span>
+              Change Password
+            </Link>
           </div>
-          <div className="col-sm-3  me-3">
-            <button type="button" className="btn btn-outline-secondary btn-md">
-              Cancel
+          <div className="col-sm-6">
+            <button
+              type="submit"
+              className="btn btn-outline-secondary btn-sm w-100"
+            >
+              Save
             </button>
           </div>
         </div>

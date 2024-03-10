@@ -1,12 +1,13 @@
-import './App.css';
-import ProfileManagement from './components/ProfileManagement/ProfileManagement';
+import { Routes, Route } from "react-router-dom"; 
+import EditProfile from "./components/ProfileManagement/EditProfile";
+import ChangePassword from "./components/ProfileManagement/ChangePassword";
 
 function App() {
   return (
-    <div className="App">
-       <h2 className="profile-heading">My Profile</h2>
-       <ProfileManagement/>
-    </div>
+    <Routes>
+      <Route path="/" element={<EditProfile />} />
+      <Route path="/change-password" element={<ChangePassword />} />
+    </Routes>
   );
 }
 
