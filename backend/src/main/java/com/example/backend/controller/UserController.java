@@ -7,20 +7,28 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-@RestController
+
+@RestController // Indicates that this class is a controller and the methods return JSON responses
 public class UserController {
 
     @Autowired
     UserService userService;
 
-    @GetMapping("/user/{id}")
-    public Optional<User> getUserById(@PathVariable int id) { return userService.getUserById(id);}
-
+    // Endpoint to save a new user
     @PostMapping("/save")
-    public String saveUser(@RequestBody User user) { return userService.saveUser(user);}
+    public String saveUser(@RequestBody User user) {
+        return userService.saveUser(user); // Delegate the saving operation to the UserService
+    }
 
-    @PutMapping("/update/user/{id}")
+    // Endpoint to retrieve a user by ID
+    @GetMapping("/user/{id}")
+    public Optional<User> getUserById(@PathVariable int id) {
+        return userService.getUserById(id);  // Delegate the retrieval operation to the UserService
+    }
+
+    // Endpoint to update a user by ID
+    @PutMapping("/user/{id}")
     public User updateUserById(@PathVariable int id, @RequestBody User updatedUser) {
-        return userService.updateUser(id, updatedUser);
+        return userService.updateUser(id, updatedUser); // Delegate the update operation to the UserService
     }
 }
