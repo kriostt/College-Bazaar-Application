@@ -1,4 +1,4 @@
-# RDP Bazaar - Spring Boot Application
+# RDP Bazaar - React + Spring Boot Application
 
 ## Overview
 
