@@ -13,7 +13,7 @@ import java.util.List;
 public class ProductService {
     // automatic injection of IProductRepository instance
     @Autowired
-    private IProductRepository repository;
+    IProductRepository repository;
 
     // retrieve all products
     public List<Product> getAllProducts() { return repository.findAll(); }

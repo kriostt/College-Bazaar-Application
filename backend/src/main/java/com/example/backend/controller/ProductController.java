@@ -9,11 +9,10 @@ import java.util.List;
 
 // handle HTTP requests related to Product entities
 @RestController
-@RequestMapping("/api/products")
 public class ProductController {
     // automatic injection of ProductService instance
     @Autowired
-    private ProductService productService;
+    ProductService productService;
 
     // handles HTTP GET request to retrieve all products
     @GetMapping("/shop")
@@ -22,8 +21,8 @@ public class ProductController {
     }
 
     // handles HTTP GET request to retrieve products based on category
-    @GetMapping("/{category}")
-    public List<Product> getProductsByCategory(@PathVariable String category) {
+    @GetMapping("/products/category")
+    public List<Product> getProductsByCategory(@RequestParam String category) {
         return productService.getProductsByCategory(category);
     }
 }
