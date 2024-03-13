@@ -3,6 +3,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SearchBar from "./components/SearchBar";
 import Navbar from "./components/Navbar";
+import EditProfile from "./components/ProfileManagement/EditProfile";
+import ChangePassword from "./components/ProfileManagement/ChangePassword";
 
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
@@ -19,12 +21,14 @@ function App() {
   // JSX for app component
   return (
     <Router>
-      {/* display navigation bar and search bar components */}
-      <Navbar />
-      <SearchBar />
-
-      {/* define routes for different pages */}
       <Routes>
+        {/* display navigation bar and search bar components */}
+        <Navbar />
+        <SearchBar />
+
+        {/* define routes for different pages */}
+        <Route path="/" element={<EditProfile />} /> {/* CHANGE PATH */}
+        <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/" element={<Home />}></Route>
         <Route path="/shop" element={<Shop />}></Route>
 
